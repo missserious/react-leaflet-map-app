@@ -1,0 +1,64 @@
+:root {
+  /* sample colors */
+  --color--1: #fde7aa;
+  --color--2: #f19721;
+  --color--3: #e06c1c;
+  --color--4: #4d3524;
+  --color--5: #f40000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: var(--color--1);
+  color: var(--color--4);
+  height: 100vh;
+  overscroll-behavior-y: none;
+}
+
+/* Flexbox Container */
+#root {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 0.5em;
+  /* background-color: red; */
+}
+
+/* MAP CONTAINER */
+.map {
+  flex: 1;
+  /* background-color: green; */
+}
+
+/* LEAFLET */
+.leaflet-container {
+  height: 98.3vh;
+  border-radius: 10px 0px 0px 10px;
+}
+
+/* SIDEBAR CONTAINER */
+.sidebar {
+  padding: 3rem 2rem 4rem 2rem;
+  width: 20%;
+  min-width: 20em;
+
+  border-radius: 0px 10px 10px 0px;
+  background-color: var(--color--2);
+}
+
+/* FORM CONTAINER */
+.form {
+  background-color: var(--color--3);
+  border-radius: 10px;
+}
+
+/* LIST CONTAINER */
+.list {
+  padding-top: 4em;
+}
