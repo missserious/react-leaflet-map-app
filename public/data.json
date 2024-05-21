@@ -1,0 +1,26 @@
+[
+  {
+    "uuid": "1",
+    "title": "title1",
+    "duration": "2",
+    "date": "2023-12-16T16:50:00Z",
+    "location": {
+      "position": {
+        "latitude": 45.516,
+        "longitude": -122.636
+      }
+    }
+  },
+  {
+    "uuid": "2",
+    "title": "title2",
+    "duration": "2.5",
+    "date": "2023-12-18T16:50:00Z",
+    "location": {
+      "position": {
+        "latitude": 45.516,
+        "longitude": -122.636
+      }
+    }
+  }
+]
