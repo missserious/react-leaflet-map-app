@@ -3,7 +3,7 @@ export default function List({ destinationData }) {
     <>
       <div className="list">
         <ul>
-          {destinationData.map((item) => (
+          {destinationData.reverse().map((item) => (
             <li key={item.uuid}>
               Title: {item.title}, Duration: {item.duration} <br />
               Location:

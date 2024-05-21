@@ -21,7 +21,6 @@ export default function Form({ onAddDestinations }) {
       },
     };
     // console.log(newDestination);
-
     onAddDestinations(newDestination);
 
     setTitle("");

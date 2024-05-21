@@ -29,7 +29,7 @@ export default function App() {
       ) : (
         <>
           <div className="map">
-            <MapComponent />
+            <MapComponent destinationData={destinations} />
           </div>
           <div className="sidebar">
             <Form onAddDestinations={handleAddDestinations} />
