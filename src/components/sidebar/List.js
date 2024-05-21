@@ -1,8 +1,19 @@
-export default function List() {
+export default function List({ destinationData }) {
   return (
     <>
       <div className="list">
-        <h1>Liste...</h1>
+        <ul>
+          {destinationData.map((item) => (
+            <li key={item.uuid}>
+              Title: {item.title}, Duration: {item.duration} <br />
+              Location:
+              <br />
+              Latitude: {item.location.position.latitude}
+              <br />
+              Longitude: {item.location.position.longitude}
+            </li>
+          ))}
+        </ul>
       </div>
     </>
   );
