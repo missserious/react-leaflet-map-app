@@ -8,10 +8,11 @@ import { Icon } from "leaflet";
 import FlyToLocation from "./FlyToLocation";
 
 export default function MapComponent({ destinationData }) {
-  const zoom = 13;
+  const zoom = 10;
   const center = {
-    lat: 13.999,
-    lng: 50.888,
+    // Coordinates Matara
+    lat: 5.949568,
+    lng: 80.544359,
   };
 
   const customIcon = new Icon({

@@ -1,25 +1,25 @@
 [
   {
     "uuid": "1",
-    "title": "title1",
+    "title": "1. Mirissa",
     "duration": "2",
     "date": "2023-12-16T16:50:00Z",
     "location": {
       "position": {
-        "latitude": 42.516,
-        "longitude": -122.636
+        "latitude": 5.946206,
+        "longitude": 80.447153
       }
     }
   },
   {
     "uuid": "2",
-    "title": "title2",
+    "title": "2. Madiha Surf Beach",
     "duration": "2.5",
     "date": "2023-12-18T16:50:00Z",
     "location": {
       "position": {
-        "latitude": 45.516,
-        "longitude": -122.636
+        "latitude": 5.93688,
+        "longitude": 80.510558
       }
     }
   }
