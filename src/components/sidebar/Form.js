@@ -1,12 +1,14 @@
 // REACT HOOKS
 import { useState } from "react";
 
+// FORM CSS
 import "./form.css";
 
+// TODO: Form Validation
 export default function Form({ onAddDestinations }) {
   /*
-   * lat & long
-   * title
+   [x] lat & long
+   [x] title
    * duration
    * date
    * time
@@ -26,7 +28,7 @@ export default function Form({ onAddDestinations }) {
 
     const newDestination = {
       uuid: Date.now(),
-      title,
+      title: title,
       duration: "3",
       location: {
         position: {
@@ -51,7 +53,7 @@ export default function Form({ onAddDestinations }) {
           <input
             className="form__input"
             type="text"
-            placeholder="latitude"
+            placeholder="-90° to 90°"
             value={latitude}
             onChange={(e) => setLatitude(e.target.value)}
           />
@@ -61,7 +63,7 @@ export default function Form({ onAddDestinations }) {
           <input
             className="form__input"
             type="text"
-            placeholder="longitude"
+            placeholder="-180° to 180°"
             value={longitude}
             onChange={(e) => setLongitude(e.target.value)}
           />
@@ -71,7 +73,7 @@ export default function Form({ onAddDestinations }) {
           <input
             className="form__input"
             type="text"
-            placeholder="placeholder"
+            placeholder="please, enter a title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />

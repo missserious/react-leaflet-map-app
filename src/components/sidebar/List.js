@@ -1,19 +1,16 @@
-export default function List({ destinationData }) {
-  // destinationData umdrehen
-  console.log(destinationData);
-  console.log(destinationData.length);
-  console.log(destinationData[0]);
-  console.log(destinationData[0]);
+// LIST CSS
+import "./list.css";
 
+export default function List({ destinationData }) {
   return (
     <>
       <div className="list">
-        <ul>
+        <ul class="sessions">
           {destinationData.toReversed().map((item) => (
-            <li key={item.uuid}>
-              Title: {item.title}
+            <li key={item.uuid} class="session">
+              <strong>{item.title}</strong>
               <br />
-              Location:
+              Duration: {item.duration}
               <br />
               Latitude: {item.location.position.latitude}
               <br />
