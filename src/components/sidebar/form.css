@@ -1,0 +1,67 @@
+input,
+select,
+textarea,
+button {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+/* FORM CONTAINER */
+.form {
+  background-color: var(--color--3);
+  border-radius: 5px;
+  padding: 0.5rem 0.75rem;
+  /* margin-bottom: 1.75rem; */
+  border-style: solid;
+  border-width: 0.1em;
+  border-color: var(--color--1);
+  font-weight: 600;
+}
+
+.form__row {
+  display: flex;
+  align-items: center;
+  padding: 0.3rem;
+}
+
+.form__label {
+  flex: 0 0 40%;
+}
+
+.form__input {
+  width: 100%;
+  padding: 0.3rem 1.1rem;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 0.1em;
+  border-color: var(--color--1);
+  background-color: var(--color--2);
+  transition: all 0.2s;
+}
+
+.form__input:focus {
+  outline: none;
+  background-color: var(--color--1);
+}
+
+.form__button {
+  width: 100%;
+  padding: 0.3rem 1.1rem;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--color--4);
+  color: var(--color--1);
+  border-style: solid;
+  border-width: 0.1em;
+  border-color: var(--color--1);
+}
+
+::placeholder {
+  color: var(--color--4);
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+:focus::placeholder {
+  opacity: 0;
+}
