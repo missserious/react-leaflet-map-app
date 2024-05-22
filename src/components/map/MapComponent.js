@@ -1,16 +1,17 @@
 // LEAFLET-REACT COMPONENTS
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+
 // LEAFLET COMPONENTS
 import { Icon } from "leaflet";
 
-// REACT HOOKS
-// import { useState } from "react";
+// OWN COMPONENTS
+import FlyToLocation from "./FlyToLocation";
 
 export default function MapComponent({ destinationData }) {
   const zoom = 13;
   const center = {
-    lat: 48.999,
-    lng: 2.888,
+    lat: 13.999,
+    lng: 50.888,
   };
 
   const customIcon = new Icon({
@@ -25,6 +26,8 @@ export default function MapComponent({ destinationData }) {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
         />
+
+        <FlyToLocation />
 
         {/* Render fetched Data */}
         {destinationData.map((marker) => (
