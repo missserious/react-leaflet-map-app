@@ -16,13 +16,12 @@ import useFetchData from "./hooks/useFetchData";
 
 export default function App() {
   const [coordinates, setCoordinates] = useState({});
+  const [destinations, setDestinations] = useState([]);
+  const loading = useFetchData({ setDestinations });
 
   function handleAddCoordinates(newCoordinates) {
     setCoordinates(newCoordinates);
   }
-
-  const [destinations, setDestinations] = useState([]);
-  const loading = useFetchData({ setDestinations });
 
   function handleAddDestinations(destination) {
     setDestinations((destinations) => [...destinations, destination]);

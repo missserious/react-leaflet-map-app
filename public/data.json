@@ -2,8 +2,9 @@
   {
     "uuid": "1",
     "title": "1. Mirissa",
+    "date": "2023/16/12",
+    "time": "13:00",
     "duration": "2",
-    "date": "2023-12-16T16:50:00Z",
     "location": {
       "position": {
         "latitude": 5.946206,
@@ -14,8 +15,9 @@
   {
     "uuid": "2",
     "title": "2. Madiha Surf Beach",
+    "date": "2023/18/12",
+    "time": "16:00",
     "duration": "2.5",
-    "date": "2023-12-18T16:50:00Z",
     "location": {
       "position": {
         "latitude": 5.93688,

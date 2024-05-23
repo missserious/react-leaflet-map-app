@@ -10,11 +10,15 @@ export default function List({ destinationData }) {
             <li key={item.uuid} className="session">
               <strong>{item.title}</strong>
               <br />
-              Duration: {item.duration}
+              Date: {item.date}
               <br />
+              Time: {item.time}
+              <br />
+              Duration: {item.duration}
+              {/* <br />
               Latitude: {item.location.position.latitude}
               <br />
-              Longitude: {item.location.position.longitude}
+              Longitude: {item.location.position.longitude} */}
             </li>
           ))}
         </ul>
