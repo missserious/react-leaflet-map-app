@@ -56,6 +56,10 @@ button {
   border-color: var(--color--1);
 }
 
+.form__button:hover {
+  background-color: var(--color--2);
+}
+
 ::placeholder {
   color: var(--color--4);
   opacity: 1;

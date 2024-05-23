@@ -1,5 +1,7 @@
 // LEAFLET-REACT COMPONENTS
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+// LEAFLET-REACT HOOKS
+import { useMapEvents } from "react-leaflet/hooks";
 
 // LEAFLET COMPONENTS
 import { Icon } from "leaflet";
@@ -7,7 +9,13 @@ import { Icon } from "leaflet";
 // OWN COMPONENTS
 import FlyToLocation from "./FlyToLocation";
 
-export default function MapComponent({ destinationData }) {
+const MapEventsHandler = ({ handleMapClick }) => {
+  useMapEvents({
+    click: (e) => handleMapClick(e),
+  });
+};
+
+export default function MapComponent({ destinationData, onAddCoordinates }) {
   const zoom = 10;
   const center = {
     // Coordinates Matara
@@ -20,6 +28,13 @@ export default function MapComponent({ destinationData }) {
     iconSize: [38, 38], // size of icon
   });
 
+  const handleMapClick = (e) => {
+    // const { lat, lng } = e.latlng;
+    // console.log(e.latlng);
+    // alert(`Clicked at: ${lat}, ${lng}`);
+    onAddCoordinates(e.latlng);
+  };
+
   return (
     <>
       <MapContainer center={center} zoom={zoom} placeholder>
@@ -29,10 +44,13 @@ export default function MapComponent({ destinationData }) {
         />
 
         <FlyToLocation />
+        <MapEventsHandler handleMapClick={handleMapClick} />
 
+        {/* TODO: in eigene Komponente */}
         {/* Render fetched Data */}
         {destinationData.map((marker) => (
           <Marker
+            key={marker.uuid}
             position={[
               marker.location.position.latitude,
               marker.location.position.longitude,

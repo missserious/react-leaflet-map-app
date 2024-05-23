@@ -1,13 +1,13 @@
-// LIST CSS
+// OWN CSS
 import "./list.css";
 
 export default function List({ destinationData }) {
   return (
     <>
       <div className="list">
-        <ul class="sessions">
+        <ul className="sessions">
           {destinationData.toReversed().map((item) => (
-            <li key={item.uuid} class="session">
+            <li key={item.uuid} className="session">
               <strong>{item.title}</strong>
               <br />
               Duration: {item.duration}

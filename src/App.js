@@ -1,5 +1,6 @@
-// CSS
+// Leaflet CSS
 import "leaflet/dist/leaflet.css";
+//OWN CSS
 import "./styles.css";
 
 // OWN COMPONENTS
@@ -14,8 +15,13 @@ import { useState } from "react";
 import useFetchData from "./hooks/useFetchData";
 
 export default function App() {
-  const [destinations, setDestinations] = useState([]);
+  const [coordinates, setCoordinates] = useState({});
 
+  function handleAddCoordinates(newCoordinates) {
+    setCoordinates(newCoordinates);
+  }
+
+  const [destinations, setDestinations] = useState([]);
   const loading = useFetchData({ setDestinations });
 
   function handleAddDestinations(destination) {
@@ -29,10 +35,17 @@ export default function App() {
       ) : (
         <>
           <div className="map">
-            <MapComponent destinationData={destinations} />
+            <MapComponent
+              destinationData={destinations}
+              onAddCoordinates={handleAddCoordinates}
+            />
           </div>
           <div className="sidebar">
-            <Form onAddDestinations={handleAddDestinations} />
+            <Form
+              onAddDestinations={handleAddDestinations}
+              coordinates={coordinates}
+              onAddCoordinates={handleAddCoordinates}
+            />
             <List className="list" destinationData={destinations} />
           </div>
         </>

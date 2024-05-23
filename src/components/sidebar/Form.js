@@ -1,22 +1,16 @@
+// OWN CSS
+import "./form.css";
+
 // REACT HOOKS
 import { useState } from "react";
 
-// FORM CSS
-import "./form.css";
-
 // TODO: Form Validation
-export default function Form({ onAddDestinations }) {
-  /*
-   [x] lat & long
-   [x] title
-   * duration
-   * date
-   * time
-   * duration
-   * description
-   * rating (stars)
-   *
-   */
+export default function Form({
+  onAddDestinations,
+  coordinates,
+  onAddCoordinates,
+}) {
+  const { lat, lng } = coordinates;
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
   const [title, setTitle] = useState("");
@@ -24,7 +18,8 @@ export default function Form({ onAddDestinations }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (!title || !longitude || !latitude) return;
+    // if form fields are empty - return
+    if (!title || !longitude || !latitude || !lat || !lng) return;
 
     const newDestination = {
       uuid: Date.now(),
@@ -32,14 +27,15 @@ export default function Form({ onAddDestinations }) {
       duration: "3",
       location: {
         position: {
-          latitude: latitude,
-          longitude: longitude,
+          latitude: lat,
+          longitude: lng,
         },
       },
     };
-    // console.log(newDestination);
     onAddDestinations(newDestination);
 
+    // reset the form
+    onAddCoordinates(0, 0);
     setLatitude("");
     setLongitude("");
     setTitle("");
@@ -48,6 +44,14 @@ export default function Form({ onAddDestinations }) {
   return (
     <>
       <form className="form" onSubmit={handleSubmit}>
+        {/* TEST */}
+        <div className="form__row">
+          <label className="form__label">Latitude: {lat}</label>
+        </div>
+        <div className="form__row">
+          <label className="form__label">Longitude: {lng}</label>
+        </div>
+        {/* TEST */}
         <div className="form__row">
           <label className="form__label">Latitude</label>
           <input
